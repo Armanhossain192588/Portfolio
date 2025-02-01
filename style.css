@@ -12,6 +12,7 @@ a {
     text-decoration: none;
 }
 
+/* NAVBAR */
 .navbar {
     position: fixed;
     left: 0;
@@ -60,6 +61,7 @@ a {
     color: #7cf03d;
 }
 
+/* HOME SECTION */
 .Home {
     display: flex;
     align-items: center;
@@ -88,15 +90,7 @@ a {
     display: inline-block;
     color: transparent;
     -webkit-text-stroke: .7px #7cf03d;
-    //*animation: display-tex 16s linear infinite;*//
     animation-delay: calc(-4 * var(--i));
-}
-
-@keyframes display-tex {
-    25%,
-    100% {
-        display: none;
-    }
 }
 
 .home-info h2 span::before{
@@ -107,15 +101,14 @@ a {
     color: #7cf03d;
     white-space: nowrap;
     overflow: hidden;
-    animation: fill-text 4s linear infinite ;
+    animation: fill-text 4s linear infinite;
 }
+
 @keyframes fill-text{
-    10%,
-    100% {
+    10%, 100% {
         width: 0;
     }
-    70%,
-    90% {
+    70%, 90% {
         width: 100%;
     }
 }
@@ -170,6 +163,7 @@ a {
     box-shadow: 0 0 10px #7cf03d;
 }
 
+/* Home Image & Animation */
 .home-img .img-box {
     position: relative;
     width: 32vw;
@@ -196,6 +190,7 @@ a {
 .home-img .img-box::after{
     animation-delay: -5s;
 }
+
 @keyframes rotate-border {
     100%{
         transform: rotate(360deg);
@@ -246,7 +241,8 @@ a {
         transform: translateY(0%);
     }
 }
-/* Skills Section */
+
+/* SKILLS SECTION */
 .skills {
     padding: 60px 9%;
     background: #1f242d;
@@ -287,7 +283,7 @@ a {
     margin-top: 10px;
 }
 
-/* Projects Section */
+/* PROJECTS SECTION */
 .projects {
     padding: 60px 9%;
     background: #2c303a;
@@ -333,94 +329,7 @@ a {
     margin: 0 20px 20px;
 }
 
-/* Skills Section */
-.skills {
-    padding: 60px 9%;
-    background: #1f242d;
-    color: #fff;
-}
-
-.skills h2 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-}
-
-.skill-item {
-    text-align: center;
-    padding: 20px;
-    background: #2c303a;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-10px);
-}
-
-.skill-item i {
-    font-size: 50px;
-    color: #7cf03d;
-}
-
-.skill-item h3 {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-/* Projects Section */
-.projects {
-    padding: 60px 9%;
-    background: #2c303a;
-    color: #fff;
-}
-
-.projects h2 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.project-item {
-    background: #1f242d;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.project-item:hover {
-    transform: translateY(-10px);
-}
-
-.project-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-item h3 {
-    font-size: 24px;
-    margin: 20px;
-}
-
-.project-item p {
-    font-size: 16px;
-    margin: 0 20px 20px;
-}
-
-/* Contact Section */
+/* CONTACT SECTION */
 .contact {
     padding: 60px 9%;
     background: #1f242d;
@@ -486,7 +395,7 @@ a {
     background: #5cb83d;
 }
 
-/* About Section */
+/* ABOUT SECTION */
 .about {
     padding: 60px 9%;
     background: #2c303a;
@@ -528,4 +437,88 @@ a {
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .Home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .home-info h1 {
+        font-size: 45px;
+    }
+    
+    .home-info h2 {
+        font-size: 28px;
+    }
+    
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    .navbar ul li {
+        margin-left: 20px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    
+    .home-img .img-box {
+        width: 60vw;
+        height: 60vw;
+    }
+    
+    .home-info h1 {
+        font-size: 35px;
+    }
+    
+    .home-info h2 {
+        font-size: 24px;
+    }
+    
+    .contact h2,
+    .skills h2,
+    .projects h2,
+    .about h2 {
+        font-size: 32px;
+    }
+    
+    .btn {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    
+    .form-group label {
+        font-size: 16px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
 }
